@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <title>Più di prima</title>
+
+  <!--[if IE]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+  <div class="content">
+
+    <div id="hide">
+      <h1>Ora è <span id="number">NUMBER</span></h1>
+      <button id="button">&#43;</button>
+    </div>
+    <div id="show" style="display: none;">
+      <h2><span id="result">NUMBER</span> è più di prima!</h2>
+    </div>
+
+  </div>
+
+</body>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var variable = Math.floor(Math.random() * 688);
+
+    document.getElementById('button').onclick = function() {
+      document.getElementById('result').innerHTML = variable + 1;
+      document.getElementById('show').removeAttribute('style');
+      document.getElementById('hide').setAttribute('style', 'display:none');
+    };
+    document.getElementById('number').innerHTML = variable;
+
+  });
+
+</script>
+
+</html>
